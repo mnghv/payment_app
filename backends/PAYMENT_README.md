@@ -12,8 +12,8 @@ composer install
 ### 2. Environment Configuration
 Add the following to your `.env` file:
 ```env
-STRIPE_PUBLISHABLE_KEY=pk_test_51RoORjJfdX3e7oAIgmAQWTCASKwGOMSI2rd9Krx3XYXl8tYi16WoZYDFtNkJDdP1hCVKLqUmsxBIcC9kffWHwOtL00XFrt4AyF
-STRIPE_SECRET_KEY=sk_test_51RoORjJfdX3e7oAItRGqRgiZ0bd9IPPBcHLnxvNkjGsQQZYuYpvm7fhAHkB2vNms78gn1isnk2VRbuc5xasegnMh00uRmSSKj1
+STRIPE_PUBLISHABLE_KEY=***
+STRIPE_SECRET_KEY=***
 ```
 
 ### 3. Database Setup

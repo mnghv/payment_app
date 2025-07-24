@@ -26,7 +26,7 @@ chmod -R 775 storage bootstrap/cache
 
 echo "Laravel Payment Backend setup complete!"
 echo "Don't forget to add your Stripe keys to .env file:"
-echo "STRIPE_PUBLISHABLE_KEY=pk_test_51RoORjJfdX3e7oAIgmAQWTCASKwGOMSI2rd9Krx3XYXl8tYi16WoZYDFtNkJDdP1hCVKLqUmsxBIcC9kffWHwOtL00XFrt4AyF"
-echo "STRIPE_SECRET_KEY=sk_test_51RoORjJfdX3e7oAItRGqRgiZ0bd9IPPBcHLnxvNkjGsQQZYuYpvm7fhAHkB2vNms78gn1isnk2VRbuc5xasegnMh00uRmSSKj1"
+echo "STRIPE_PUBLISHABLE_KEY=***"
+echo "STRIPE_SECRET_KEY=***"
 echo ""
 echo "You can now start the server with: php artisan serve" 
