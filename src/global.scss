@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-soft;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-500;
+  }
+  
+  .form-control {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+  
+  .alert {
+    @apply p-6 rounded-lg border mb-6;
+  }
+  
+  .alert-success {
+    @apply bg-green-50 border-green-200 text-green-800;
+  }
+  
+  .alert-error {
+    @apply bg-red-50 border-red-200 text-red-800;
+  }
+
+  .StripeElement {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+  }
+
+  .StripeElement--focus {
+    @apply border-primary-500 ring-2 ring-primary-500 ring-opacity-20;
+  }
+
+  .StripeElement--invalid {
+    @apply border-red-500 ring-2 ring-red-500 ring-opacity-20;
+  }
+
+  .StripeElement--complete {
+    @apply border-primary-500 ring-2 ring-primary-500 ring-opacity-20;
+  }
+} 
