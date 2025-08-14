@@ -4,7 +4,9 @@ A complete payment processing application with React frontend and Laravel backen
 
 ## Project Screenshot
 
-Below is an example of the pricing page interface, showing the bookkeeping services with four distinct pricing tiers:
+Below is a screenshot of the pricing page interface, showing the bookkeeping services with four distinct pricing tiers:
+
+![Payment App Screenshot](public/payment.png)
 
 The application displays a clean, modern pricing page with navigation tabs for "Software Plans", "Bookkeeping Services" (highlighted), and "Bookkeepers & Firms".
 
