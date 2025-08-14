@@ -2,6 +2,21 @@
 
 A complete payment processing application with React frontend and Laravel backend, featuring subscription management and secure payment processing.
 
+## Project Screenshot
+
+Below is an example of the pricing page interface, showing the bookkeeping services with four distinct pricing tiers:
+
+The application displays a clean, modern pricing page with navigation tabs for "Software Plans", "Bookkeeping Services" (highlighted), and "Bookkeepers & Firms".
+
+The main section features four pricing cards:
+
+1. **Starter**: $299/month for monthly expenses $0 - $15k
+2. **Growth**: $449/month for monthly expenses $15k - $50k  
+3. **Scaling**: $649/month for monthly expenses $50k - $100k
+4. **Enterprise**: $899/month for monthly expenses $100k+
+
+Each card includes a "Get Started" button and the page features a detailed comparison table showing features like bookkeeping type, financial packages, and support options across all plans.
+
 ## Features
 
 - **React Frontend**: Modern UI with Stripe Elements integration
@@ -55,7 +70,53 @@ payment_app/
 
 ## Setup Instructions
 
-### 1. Frontend Setup (React)
+### Option 1: Using Docker (Recommended)
+
+This project can be run entirely using Docker for easy setup and deployment.
+
+#### Prerequisites for Docker
+- Docker Desktop installed and running
+- `docker-compose` (usually comes with Docker Desktop)
+
+#### Quick Start with Docker
+
+1. **Create environment file:**
+   Create `docker.env` in the root directory:
+   ```env
+   # Frontend Environment Variables
+   REACT_APP_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+   REACT_APP_API_URL=http://localhost:80
+
+   # Backend Environment Variables
+   STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key_here
+   STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key_here
+
+   # Database Configuration
+   DB_HOST=mysql
+   DB_DATABASE=payment_app
+   DB_USERNAME=root
+   DB_PASSWORD=password
+   DB_PORT=3306
+   ```
+
+2. **Run the project:**
+   ```bash
+   chmod +x run-docker.sh
+   ./run-docker.sh
+   ```
+
+3. **Access the application:**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:80
+
+4. **Stop the project:**
+   ```bash
+   docker-compose down
+   ```
+
+### Option 2: Traditional Setup
+
+#### 1. Frontend Setup (React)
 
 1. **Install dependencies:**
    ```bash
@@ -74,11 +135,11 @@ payment_app/
    ```
    The React app will run on `http://localhost:3000`
 
-### 2. Backend Setup (Laravel)
+#### 2. Backend Setup (Laravel)
 
 1. **Navigate to backend directory:**
    ```bash
-   cd backend
+   cd backends
    ```
 
 2. **Install dependencies:**

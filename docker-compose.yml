@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # Frontend React App
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - docker.env
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    depends_on:
+      - backend
+    networks:
+      - payment-app
+
+  # Backend Laravel App
+  backend:
+    build:
+      context: ./backends
+      dockerfile: Dockerfile.backend
+    ports:
+      - "80:80"
+    env_file:
+      - docker.env
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    volumes:
+      - ./backends:/var/www/html
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - payment-app
+
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: payment_app
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - payment-app
+
+  # Redis Cache
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - payment-app
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  payment-app:
+    driver: bridge
